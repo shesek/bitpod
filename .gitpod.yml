@@ -9,6 +9,7 @@ tasks:
   - name: bitcoind
     before: . gitpod-before.sh
     init: |
+      sleep 30
       { . gitpod-init.sh; } 2>&1 | tee -a /workspace/init.log
       gp sync-done init
     command: |
