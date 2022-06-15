@@ -1,6 +1,6 @@
 [submodule "bitcoin"]
 	path = bitcoin
-	url = https://github.com/bitcoin/bitcoin
+	url = https://github.com/w0xlt/gui
 [submodule "btcdeb"]
 	path = btcdeb
 	url = https://github.com/bitcoin-core/btcdeb
