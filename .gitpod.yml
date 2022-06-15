@@ -40,6 +40,7 @@ tasks:
     init: echo Waiting for bitcoind to build... && gp sync-await init
     command: |
       echo Waiting for bitcoind to start...
+      gp await-port 18443
       bitcoin-cli -rpcwait getnetworkinfo | jq -r .subversion &&
       gp sync-done bitcoin-rpc &&
       bitcoin-cli loadwallet default || bitcoin-cli createwallet default &&
