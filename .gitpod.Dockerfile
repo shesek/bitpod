@@ -88,6 +88,11 @@ RUN pyenv install -s -v 3.6.12
 # additional Python versions installed in the workspace gets persisted.
 ENV PYENV_ROOT="/workspace/.pyenv"
 
+# Disable the automatic gp-vncsession startup script (it is started
+# manually in the command stage after /workspace/.pyenv is patched).
+RUN    cp /usr/bin/gp-vncsession /usr/bin/gp-vncsession-start \
+    && echo '#!/bin/true' > /usr/bin/gp-vncsession
+
 # Leaving out precise BDB version - must build with --with-incompatible-bdb or --without-bdb
 # Leaving out lldb-15 & python3-lldb-15 - suddenly including lldb-15 causes clang/clang++ to segfault
 
