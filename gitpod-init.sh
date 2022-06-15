@@ -37,7 +37,7 @@ echo '🟢 setting up git repo'
   git config --local remote.upstream.url https://github.com/bitcoin/bitcoin.git &&
   git config --local remote.upstream.fetch +refs/heads/*:refs/remotes/upstream/* &&
   git config --add --local remote.upstream.fetch +refs/pull/*/head:refs/remotes/upstream/pr/*)
-(cd /workspace/.git/modules/bitcoin &&
+(cd /workspace/bitpod/.git/modules/bitcoin &&
   rm info/exclude && ln -s /workspace/bitpod/.gitignore.global info/exclude)
 
 [ -n "$NO_BUILD" ] || bitcoin-build
